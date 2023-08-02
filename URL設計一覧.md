@@ -26,8 +26,10 @@
 - 記事の一覧表示
   - 一覧表示画面(サイドにカテゴリ一覧も表示)  
     /{ユーザID}/article_list
+  - 検索結果画面  
+    /{ユーザID}/article_list/search_result
   - タグ一覧表示画面  
-    /{ユーザID}/tag_list
+    /{ユーザID}/article_list/tag_list
 - 選択タグの記事一覧表示
   - 選択タグの記事一覧表示画面  
     /{ユーザID}/article_list/tag_search
