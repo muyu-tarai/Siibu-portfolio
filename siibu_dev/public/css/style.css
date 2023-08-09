@@ -5,10 +5,14 @@
 html {
   font-family: Arial;
   font-size: 62.5%;
-  padding:1rem 2rem;
 }
 
-main {
+.header{
+padding:2rem;
+background-color: #DDDDDD;
+}
+
+.main {
   display: grid;
   grid-template-columns: repeat(12, [col-start] 1fr);
   gap: 20px;
@@ -17,6 +21,8 @@ main {
 
 .footer{
   text-align:center;
+  padding:2rem;
+  background-color: #DDDDDD;
 }
 
 .navbar{
@@ -33,20 +39,34 @@ display: flex;
   padding:1rem;
 }
 
-.index_main_contents{
+.index-main-contents{
   grid-column: 2/10;
 }
 
 .index-sidebar{
   grid-column: 10/12;
+}
+
+.index-sidebar-inner{
+  background-color: #DDDDDD;
+  height: auto;
+  padding: 1rem 0;
   text-align: center;
-  background-color: ;
+  line-height: 3rem;
+}
+
+.index-sidebar-inner div:first-child{
+  margin-bottom: 2rem;
+}
+
+.index-main-contents div:last-child{
+  margin-top: 1rem;
 }
 
 article {
-  border: solid 0.2rem;
   margin-bottom: 1rem;
   padding: 2rem;
+  background-color: #DDDDDD;
 }
 
 .article-item{
@@ -55,6 +75,15 @@ article {
 
 .changing-page{
   text-align: center;
+}
+
+.favoriteTitle{
+  margin:2rem 0;
+}
+
+.delete-link{
+  text-align: center;
+  margin-top: 3rem;
 }
 
 .x-large {

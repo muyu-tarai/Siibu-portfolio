@@ -1,6 +1,9 @@
 @extends('layouts/article')
 
 @section('content')
+<div class="large">
+  「エンド」を含む記事の検索結果(2件)
+</div>
 <div class="some-articles">
   <article>
     <div class="article-item">

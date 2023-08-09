@@ -10,4 +10,19 @@ class ArticleListController extends Controller
     {
         return view('article/index');
     }
+
+    public function wordSearchArticle()
+    {
+        return view('article/wordSearchArticle');
+    }
+
+    public function tagSearchArticle()
+    {
+        return view('article/tagSearchArticle');
+    }
+
+    public function favoriteArticle()
+    {
+        return view('mypage/favoriteArticle');
+    }
 }

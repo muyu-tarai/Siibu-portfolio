@@ -1,6 +1,7 @@
-@extends('layouts/article')
+@extends('layouts/layout')
 
-@section('content')
+@section('articlePageParts')
+<div class="x-large">hogehogeさんのmyページ</div>
 <div class="some-articles">
   <article>
     <div class="article-item">
@@ -101,5 +102,27 @@
     1/3 >
   </div>
 </div>
+</div>
+<div class="index-sidebar">
+  <div class="index-sidebar-inner medium">
+    <div>
+      投稿記事
+    </div>
+    <div>
+      3
+      <div>
+        いいねされた数
+      </div>
+      <div>
+        10
+      </div>
+      <div>
+        <a href="#">お気に入り記事一覧</a>
+      </div>
+    </div>
+  </div>
+  <div class="delete-link small">
+    <a href="#">メンバーを退会する</a>
+  </div>
 </div>
 @endsection

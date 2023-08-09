@@ -1,6 +1,10 @@
 @extends('layouts/article')
 
 @section('content')
+
+<div class="large">
+  タグ:HTMLでの検索結果(2件)
+</div>
 <div class="some-articles">
   <article>
     <div class="article-item">
