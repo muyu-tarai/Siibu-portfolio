@@ -1,10 +1,3 @@
-@extends('layouts/layout')
-
-@section('articlePageParts')
-<form action="/article_list/word_search">
-  <input type="text" placeholder="記事を検索" class="search-box">
-</form>
-@yield('content')
 <div class="index-sidebar">
   <div class="index-sidebar-inner medium">
     <div>
@@ -20,4 +13,3 @@
     <div><a href="../article_list/tag_search">その他</a></div>
   </div>
 </div>
-@endsection

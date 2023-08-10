@@ -1,7 +1,6 @@
 <x-layout>
   <div class="index-main-contents">
-    <x-searchingBox />
-    <div class="favoriteTitle x-large">お気に入りの記事一覧</div>
+    <div class="mypage-title x-large">hogehogeさんのmyページ</div>
     <div class="some-articles">
       <article>
         <div class="article-item">
@@ -18,8 +17,14 @@
         <div class="medium">
           HTML
         </div>
-        <div class="medium">
-          <i class="fa-solid fa-heart" style="color: #ff5757;"></i>12
+        <div class="item-group">
+          <div class="medium">
+            <i class="fa-solid fa-heart" style="color: #ff5757;"></i>12
+          </div>
+          <div class="double-buttons">
+            <span><button>編集</button></span>
+            <span><button>削除</button></span>
+          </div>
         </div>
       </article>
       <article>
@@ -37,8 +42,14 @@
         <div class="medium">
           HTML
         </div>
-        <div class="medium">
-          <i class="fa-solid fa-heart" style="color: #ff5757;"></i>12
+        <div class="item-group">
+          <div class="medium">
+            <i class="fa-solid fa-heart" style="color: #ff5757;"></i>12
+          </div>
+          <div class="double-buttons">
+            <span><button>編集</button></span>
+            <span><button>削除</button></span>
+          </div>
         </div>
       </article>
       <article>
@@ -56,8 +67,14 @@
         <div class="medium">
           HTML
         </div>
-        <div class="medium">
-          <i class="fa-solid fa-heart" style="color: #ff5757;"></i>12
+        <div class="item-group">
+          <div class="medium">
+            <i class="fa-solid fa-heart" style="color: #ff5757;"></i>12
+          </div>
+          <div class="double-buttons">
+            <span><button>編集</button></span>
+            <span><button>削除</button></span>
+          </div>
         </div>
       </article>
       <article>
@@ -75,8 +92,14 @@
         <div class="medium">
           HTML
         </div>
-        <div class="medium">
-          <i class="fa-solid fa-heart" style="color: #ff5757;"></i>12
+        <div class="item-group">
+          <div class="medium">
+            <i class="fa-solid fa-heart" style="color: #ff5757;"></i>12
+          </div>
+          <div class="double-buttons">
+            <span><button>編集</button></span>
+            <span><button>削除</button></span>
+          </div>
         </div>
       </article>
       <article>
@@ -94,8 +117,14 @@
         <div class="medium">
           HTML
         </div>
-        <div class="medium">
-          <i class="fa-solid fa-heart" style="color: #ff5757;"></i>12
+        <div class="item-group">
+          <div class="medium">
+            <i class="fa-solid fa-heart" style="color: #ff5757;"></i>12
+          </div>
+          <div class="double-buttons">
+            <span><button>編集</button></span>
+            <span><button>削除</button></span>
+          </div>
         </div>
       </article>
       <div class="medium changing-page">
@@ -103,5 +132,26 @@
       </div>
     </div>
   </div>
-  <x-tagArea />
+  <div class="index-sidebar">
+    <div class="index-sidebar-inner medium">
+      <div>
+        投稿記事
+      </div>
+      <div>
+        3
+        <div>
+          いいねされた数
+        </div>
+        <div>
+          10
+        </div>
+        <div>
+          <a href="/mypage/favorite_list">お気に入り記事一覧</a>
+        </div>
+      </div>
+    </div>
+    <div class="delete-link small">
+      <a href="#">メンバーを退会する</a>
+    </div>
+  </div>
 </x-layout>

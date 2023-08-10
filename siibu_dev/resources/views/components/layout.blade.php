@@ -15,17 +15,16 @@
   <div class="header">
     <header>
       <nav class="navbar">
-        <a class="header_title x-large" href="#">Siibu</a>
+        <a class="header_title x-large" href="/article_list">Siibu</a>
         <div class="header-right">
-          <a class="header_mypage medium" href="#">myページ</a>
+          <a class="header_mypage medium" href="/mypage">myページ</a>
           <a class="header_submit medium" href="#">投稿する</a>
         </div>
       </nav>
     </header>
   </div>
   <main class="main">
-    <div class="index-main-contents">
-      @yield('articlePageParts')
+      {{$slot}}
   </main>
   <div class="footer">
     <footer>

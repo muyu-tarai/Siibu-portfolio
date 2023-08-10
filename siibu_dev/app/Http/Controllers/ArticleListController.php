@@ -21,6 +21,11 @@ class ArticleListController extends Controller
         return view('article/tagSearchArticle');
     }
 
+    public function mypage()
+    {
+        return view('mypage/mypage');
+    }
+
     public function favoriteArticle()
     {
         return view('mypage/favoriteArticle');
