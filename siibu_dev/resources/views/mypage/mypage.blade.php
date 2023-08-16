@@ -22,8 +22,10 @@
             <i class="fa-solid fa-heart" style="color: #ff5757;"></i>12
           </div>
           <div class="double-buttons">
-            <span><button>編集</button></span>
-            <span><button>削除</button></span>
+            <form method="GET">  <!-- 動作確認用！ホントはPOSTだよ！！！ -->
+              <input type="submit" formaction="mypage/article_edit" value="編集">
+              <input type="submit" formaction="#" value="削除">
+            </form>
           </div>
         </div>
       </article>

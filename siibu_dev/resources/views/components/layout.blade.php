@@ -18,7 +18,7 @@
         <a class="header_title x-large" href="/article_list">Siibu</a>
         <div class="header-right">
           <a class="header_mypage medium" href="/mypage">myページ</a>
-          <a class="header_submit medium" href="#">投稿する</a>
+          <a class="header_submit medium" href="/article_submission">投稿する</a>
         </div>
       </nav>
     </header>
