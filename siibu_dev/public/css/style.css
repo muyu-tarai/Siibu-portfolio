@@ -110,6 +110,16 @@ article {
 margin-bottom: 2rem;
 }
 
+.complete-area{
+  grid-column: 1/13;
+  text-align: center;
+  margin-top: 15rem;
+}
+
+.complete-area div:first-child{
+  margin-bottom: 5rem;
+}
+
 .x-large {
   font-size: 3rem;
 }

@@ -37,8 +37,9 @@
       </div>
     </div>
     <div>
-      <form action="#">
+      <form action="/article_submission/complete">
         <input type="submit" value="投稿する">
+        <button><a href="/article_submission">投稿画面へ</a></button>
       </form>
     </div>
   </div>

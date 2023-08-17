@@ -16,6 +16,7 @@
       </div>
       <textarea rows="27" placeholder="本文" class="input-box"></textarea>
       <input type="submit" value="投稿内容確認へ">
+      <button><a href="/mypage">myページへ</a></button>
     </form>
   </div>
 </x-layout>

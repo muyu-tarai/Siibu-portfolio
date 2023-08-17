@@ -24,7 +24,7 @@
           <div class="double-buttons">
             <form method="GET">  <!-- 動作確認用！ホントはPOSTだよ！！！ -->
               <input type="submit" formaction="mypage/article_edit" value="編集">
-              <input type="submit" formaction="#" value="削除">
+              <input type="submit" formaction="mypage/article_delete" value="削除">
             </form>
           </div>
         </div>
@@ -153,7 +153,7 @@
       </div>
     </div>
     <div class="delete-link small">
-      <a href="#">メンバーを退会する</a>
+      <a href="mypage/delete_member">メンバーを退会する</a>
     </div>
   </div>
 </x-layout>

@@ -37,9 +37,9 @@
       </div>
     </div>
     <div>
-      <form action="#">
+      <form action="/mypage/article_delete/complete">
         <input type="submit" value="削除する">
-        <button><a href="mypage/mypage">myページに戻る</a></button>
+        <button><a href="/mypage">myページに戻る</a></button>
       </form>
     </div>
   </div>

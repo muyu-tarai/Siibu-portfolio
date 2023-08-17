@@ -37,8 +37,9 @@
       </div>
     </div>
     <div>
-      <form action="#">
+      <form action="/mypage/article_edit/complete">
         <input type="submit" value="編集する">
+        <button><a href="/mypage/article_edit">編集画面に戻る</a></button>
       </form>
     </div>
   </div>
