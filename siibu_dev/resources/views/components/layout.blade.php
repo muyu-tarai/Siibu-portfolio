@@ -16,15 +16,22 @@
     <header>
       <nav class="navbar">
         <a class="header_title x-large" href="/article_list">Siibu</a>
-        <div class="header-right">
-          <a class="header_mypage medium" href="/mypage">myページ</a>
-          <a class="header_submit medium" href="/article_submission">投稿する</a>
+        <div class="header-right medium">
+            <a class="header_mypage" href="/mypage">myページ</a>
+            <a class="header_submit" href="/article_submission">投稿する</a>
+            <form method="POST" action="{{ route('logout') }}">
+              @csrf
+              <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
+                                                  this.closest('form').submit();">
+                ログアウト
+              </x-dropdown-link>
+            </form>
         </div>
       </nav>
     </header>
   </div>
   <main class="main">
-      {{$slot}}
+    {{$slot}}
   </main>
   <div class="footer">
     <footer>

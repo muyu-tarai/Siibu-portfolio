@@ -32,6 +32,8 @@ display: flex;
 
 .header-right{
   margin-left: auto;
+  display: flex;
+  gap: 2rem;
 }
 
 .input-box{
@@ -118,6 +120,13 @@ margin-bottom: 2rem;
 
 .complete-area div:first-child{
   margin-bottom: 5rem;
+}
+
+.user-operation-main{
+  min-height: 90vh;
+  grid-column: 1/13;
+  text-align: center;
+  margin-top: 15rem;
 }
 
 .x-large {

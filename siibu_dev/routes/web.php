@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleListController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,11 @@ use App\Http\Controllers\ArticleListController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    if(Auth::check()){
+    return view('article_list/index');
+    }else{
+        return view('auth/login');
+    }
 });
 
 Route::get('/dashboard', function () {
