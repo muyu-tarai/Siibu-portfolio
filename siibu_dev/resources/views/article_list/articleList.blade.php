@@ -4,24 +4,28 @@
     <div class="some-articles">
       <article>
         <div class="article-item">
+          @foreach($articles as $article)
           <div class="small">
-            アカウント名
+            {{ $article->user_id }}
           </div>
           <div class="x-small">
-            2023年8月8日
+            {{ $article->created_at }}
           </div>
         </div>
         <div class="article-item x-large">
-          HTMLが楽しすぎる
+          {{ $article->title }}
         </div>
         <div class="medium">
           HTML
         </div>
         <div class="medium">
-          <i class="fa-solid fa-heart" style="color: #ff5757;"></i>12
+          <i class="fa-solid fa-heart" style="color: #ff5757;"></i>
+          {{ $article->number_of_likes }}
         </div>
+        {{ dd($articles); }}
+        @endforeach
       </article>
-      <article>
+      <!-- <article>
         <div class="article-item">
           <div class="small">
             アカウント名
@@ -101,6 +105,6 @@
         1/3 >
       </div>
     </div>
-  </div>
+  </div> -->
     <x-tagArea />
 </x-layout>
