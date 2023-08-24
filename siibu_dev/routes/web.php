@@ -39,7 +39,7 @@ require __DIR__.'/auth.php';
 
 Route::get('/article_list', [ArticleListController::class, 'articleList'])->name('article.list');
 Route::get('/article_list/word_search', [TmpController::class, 'wordSearchArticle'])->name('word.search.article');
-Route::get('/article_list/tag_search', [TmpController::class, 'tagSearchArticle'])->name('tag.search.article');
+Route::get('/article_list/tag_search/{tagId}', [ArticleListController::class, 'tagSearchArticle'])->name('tag.search.article');
 Route::get('/mypage', [TmpController::class, 'mypage'])->name('mypage');
 Route::get('/mypage/favorite_list', [TmpController::class, 'favoriteArticle'])->name('favorite.article');
 Route::get('/article_submission', [TmpController::class, 'articleSubmission'])->name('article.submission');
