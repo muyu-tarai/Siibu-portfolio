@@ -130,7 +130,7 @@ class ArticleTableSeeder extends Seeder
             'title' => $title,
             'text' => $text,
             'number_of_likes' => $like,
-            'created_at' => Carbon::now(),
+            'created_at' => fake()->dateTimeBetween($startDate = '-3 week', $endDate = '-1 week'),
             'updated_at' => Carbon::now(),
         ]);
     }
