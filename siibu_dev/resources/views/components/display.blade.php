@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="article-item x-large">
-      <a href="/article_list/item">{{ $article->title }}</a>
+      <a href="/article_list/item/{{ $article->article_id }}">{{ $article->title }}</a>
     </div>
     <div class="medium">
       @foreach($relatedTags[$article->article_id] as $relatedTag)

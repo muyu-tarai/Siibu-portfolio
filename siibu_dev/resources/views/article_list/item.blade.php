@@ -1,10 +1,10 @@
 <article>
   <div class="article-item">
     <div class="small">
-      {{ $article->user_name }}
+      {{ $articles->user_name }}
     </div>
     <div class="x-small">
-      {{ $article->article_created_at }}
+      {{ $articles->article_created_at }}
     </div>
   </div>
   <div class="article-item x-large">

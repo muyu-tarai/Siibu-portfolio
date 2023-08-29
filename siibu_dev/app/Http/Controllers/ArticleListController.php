@@ -77,8 +77,21 @@ class ArticleListController extends Controller
     return view('article_list/wordSearchArticle', ['articles' => $this->articles, 'relatedTags' => $this->relatedTags,'searchingWord' => $request->input('searchingWord'),'articleCount' => count($this->relatedTags)]);
   }
 
-  public function item()
+  public function item($articleId)
   {
-    return view('article_list/item');
+    $this->articles = DB::table('articles')
+    ->join('add_tags', 'articles.id', '=', 'add_tags.article_id')
+    ->join('tags', 'tag_id', '=', 'tags.id')
+    ->join('users', 'user_id', '=', 'users.id')
+    ->select('articles.id as article_id', 'users.name as user_name', 'tags.name as tag_name', 'articles.created_at as article_created_at', 'title', 'number_of_likes')
+    ->where('id', $articleId)
+    ->orderBy('article_created_at', 'desc')
+    ->get();
+
+    foreach ($this->articles as $article) {
+      $this->relatedTags[$article->article_id][] = $article->tag_name;
+    }
+
+    return view('article_list/item', ['articles' => $this->articles, 'relatedTags' => $this->relatedTags]);
   }
 }
