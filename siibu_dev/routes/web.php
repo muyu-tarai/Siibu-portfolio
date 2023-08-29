@@ -38,6 +38,7 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 Route::get('/article_list', [ArticleListController::class, 'articleList'])->name('article.list');
+Route::get('/article_list/item', [ArticleListController::class, 'item'])->name('item');
 Route::post('/article_list/word_search', [ArticleListController::class, 'wordSearchArticle'])->name('word.search.article');
 Route::get('/article_list/tag_search/{tagId}', [ArticleListController::class, 'tagSearchArticle'])->name('tag.search.article');
 Route::get('/mypage', [TmpController::class, 'mypage'])->name('mypage');

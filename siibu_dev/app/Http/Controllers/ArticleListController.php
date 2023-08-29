@@ -76,4 +76,9 @@ class ArticleListController extends Controller
 
     return view('article_list/wordSearchArticle', ['articles' => $this->articles, 'relatedTags' => $this->relatedTags,'searchingWord' => $request->input('searchingWord'),'articleCount' => count($this->relatedTags)]);
   }
+
+  public function item()
+  {
+    return view('article_list/item');
+  }
 }
