@@ -46,6 +46,10 @@ display: flex;
   grid-column: 2/10;
 }
 
+.index-main-contents.article-page{
+  grid-column: 2/12;
+}
+
 .index-sidebar{
   grid-column: 10/12;
 }
@@ -60,10 +64,6 @@ display: flex;
 
 .index-sidebar-inner div:first-child{
   margin-bottom: 2rem;
-}
-
-.index-main-contents div:last-child{
-  margin-top: 1rem;
 }
 
 article {
@@ -127,6 +127,10 @@ margin-bottom: 2rem;
   grid-column: 1/13;
   text-align: center;
   margin-top: 15rem;
+}
+
+.text-area{
+  margin-top: 3rem;
 }
 
 .x-large {

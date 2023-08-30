@@ -25,6 +25,11 @@
       <i class="fa-solid fa-heart" style="color: #ff5757;"></i>
       {{ $article->number_of_likes }}
     </div>
+    @if(isset($article->text))
+    <div class="text-area medium">
+      {{ $article->text }}
+    </div>
+      @endif
     @endif
     @php
     $prevArticleId = $article->article_id;

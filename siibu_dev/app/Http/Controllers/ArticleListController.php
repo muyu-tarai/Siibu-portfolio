@@ -83,8 +83,8 @@ class ArticleListController extends Controller
     ->join('add_tags', 'articles.id', '=', 'add_tags.article_id')
     ->join('tags', 'tag_id', '=', 'tags.id')
     ->join('users', 'user_id', '=', 'users.id')
-    ->select('articles.id as article_id', 'users.name as user_name', 'tags.name as tag_name', 'articles.created_at as article_created_at', 'title', 'number_of_likes')
-    ->where('id', $articleId)
+    ->select('articles.id as article_id', 'users.name as user_name', 'tags.name as tag_name', 'articles.created_at as article_created_at', 'title', 'text', 'number_of_likes')
+    ->where('articles.id', $articleId)
     ->orderBy('article_created_at', 'desc')
     ->get();
 
