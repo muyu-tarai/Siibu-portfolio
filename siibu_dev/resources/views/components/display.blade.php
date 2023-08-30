@@ -27,9 +27,9 @@
     </div>
     @if(isset($article->text))
     <div class="text-area medium">
-      {{ $article->text }}
+      {!! nl2br(htmlspecialchars($article->text)) !!}
     </div>
-      @endif
+    @endif
     @endif
     @php
     $prevArticleId = $article->article_id;

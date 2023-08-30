@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TmpController;
 use App\Http\Controllers\ArticleListController;
+use App\Http\Controllers\ArticleSubmissionController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -43,11 +44,10 @@ Route::post('/article_list/word_search', [ArticleListController::class, 'wordSea
 Route::get('/article_list/tag_search/{tagId}', [ArticleListController::class, 'tagSearchArticle'])->name('tag.search.article');
 Route::get('/mypage', [TmpController::class, 'mypage'])->name('mypage');
 Route::get('/mypage/favorite_list', [TmpController::class, 'favoriteArticle'])->name('favorite.article');
-Route::get('/article_submission', [TmpController::class, 'articleSubmission'])->name('article.submission');
-Route::get('/article_submission/check', [TmpController::class, 'articleSubmissionCheck'])->name('article.submission.check');
-Route::get('/article_submission/complete', [TmpController::class, 'articleSubmissionComplete'])->name('article.submission.complete');
+Route::get('/article_submission', [ArticleSubmissionController::class, 'articleSubmission'])->name('article.submission');
+Route::post('/article_submission/check', [ArticleSubmissionController::class, 'articleSubmissionCheck'])->name('article.submission.check');
+Route::post('/article_submission/complete', [ArticleSubmissionController::class, 'articleSubmissionComplete'])->name('article.submission.complete');
 Route::get('/mypage/article_edit', [TmpController::class, 'articleEdit'])->name('article.edit');
-Route::get('/article_submission/check', [TmpController::class, 'articleSubmissionCheck'])->name('check.submission');
 Route::get('/mypage/article_edit/check', [TmpController::class, 'articleEditCheck'])->name('article.edit.check');
 Route::get('/mypage/article_edit/complete', [TmpController::class, 'articleEditComplete'])->name('article.edit.complete');
 Route::get('/mypage/delete_member', [TmpController::class, 'deleteMember'])->name('delete.member');

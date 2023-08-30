@@ -23,11 +23,6 @@ class TmpController extends Controller
         return view('mypage/favoriteArticle');
     }
 
-    public function articleSubmission()
-    {
-        return view('article_submission/articleSubmission');
-    }
-
     public function articleEdit()
     {
         return view('mypage/articleEdit');
