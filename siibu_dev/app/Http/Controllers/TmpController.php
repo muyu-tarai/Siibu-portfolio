@@ -13,11 +13,6 @@ class TmpController extends Controller
         return view('article_list/wordSearchArticle');
     }
 
-    public function mypage()
-    {
-        return view('mypage/mypage');
-    }
-
     public function favoriteArticle()
     {
         return view('mypage/favoriteArticle');

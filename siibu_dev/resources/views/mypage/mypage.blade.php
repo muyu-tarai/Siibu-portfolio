@@ -1,6 +1,6 @@
 <x-layout>
   <div class="index-main-contents">
-    <div class="mypage-title x-large">hogehogeさんのmyページ</div>
+    <div class="mypage-title x-large">{{ $user_name }}さんのmyページ</div>
     <div class="some-articles">
       <article>
         <div class="article-item">

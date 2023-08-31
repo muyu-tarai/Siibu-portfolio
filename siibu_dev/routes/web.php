@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TmpController;
 use App\Http\Controllers\ArticleListController;
 use App\Http\Controllers\ArticleSubmissionController;
+use App\Http\Controllers\MypageController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -42,7 +43,7 @@ Route::get('/article_list', [ArticleListController::class, 'articleList'])->name
 Route::get('/article_list/item/{articleId}', [ArticleListController::class, 'item'])->name('item');
 Route::post('/article_list/word_search', [ArticleListController::class, 'wordSearchArticle'])->name('word.search.article');
 Route::get('/article_list/tag_search/{tagId}', [ArticleListController::class, 'tagSearchArticle'])->name('tag.search.article');
-Route::get('/mypage', [TmpController::class, 'mypage'])->name('mypage');
+Route::get('/mypage', [MypageController::class, 'mypage'])->name('mypage');
 Route::get('/mypage/favorite_list', [TmpController::class, 'favoriteArticle'])->name('favorite.article');
 Route::get('/article_submission', [ArticleSubmissionController::class, 'articleSubmission'])->name('article.submission');
 Route::post('/article_submission/check', [ArticleSubmissionController::class, 'articleSubmissionCheck'])->name('article.submission.check');

@@ -15,8 +15,8 @@
         タグ
       </div>
       @foreach($tags as $tag)
-      <span>{{ $tag[0]->name }}</span>
-      <input type="hidden" value="{{ $tag[0]->name }}" name="tags[]">
+      <span>{{ $tag->name }}</span>
+      <input type="hidden" value="{{ $tag->id }}" name="tags[]">
       @endforeach
     </div>
     <div class="article-text medium">

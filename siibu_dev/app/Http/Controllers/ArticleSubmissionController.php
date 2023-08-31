@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 
@@ -13,20 +13,23 @@ class ArticleSubmissionController extends Controller
     {
         $tags = DB::table('tags')
             ->get();
-
         return view('article_submission/articleSubmission', ['tags' => $tags]);
     }
 
     public function articleSubmissionCheck(Request $request)
     {
-        foreach($request->input('tags') as $tag){
-        $tags[] = DB::table('tags')
-        ->select('id', 'name')
-        ->where('id',$tag)
-        ->get();
+        foreach ($request->input('tags') as $tag) {
+            $tags[] = DB::table('tags')
+                ->select('id', 'name')
+                ->where('id', $tag)
+                ->get();
         }
-        dd($tags);
-        return view('article_submission/articleSubmissionCheck', ['title' => $request->input('title'), 'text' => $request->input('text'), 'tags' => $tags]);
+        foreach ($tags as $tmp) {
+            foreach ($tmp as $tag) {
+                $tagNames[] = $tag;
+            }
+        }
+        return view('article_submission/articleSubmissionCheck', ['title' => $request->input('title'), 'text' => $request->input('text'), 'tags' => $tagNames]);
     }
 
     public function articleSubmissionComplete(Request $request)
@@ -48,5 +51,7 @@ class ArticleSubmissionController extends Controller
                     'tag_id' => $tag
                 ]);
         }
+
+        return view('article_submission/articleSubmissionComplete');
     }
 }
