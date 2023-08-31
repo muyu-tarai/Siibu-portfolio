@@ -1,24 +1,32 @@
 <x-layout>
   <div class="index-main-contents">
-    @php
-    foreach ($articles as $article){
-    $articleId[] = $article->article_id;
-    $numberOfArticle = count((array_unique($articleId)));
-    }
-    @endphp
     <div class="mypage-title x-large">{{ $user_name }}さんのmyページ</div>
     <div class="some-articles">
+      @php
+      $prevArticleId = '';
+      @endphp
+      @foreach($articles as $article)
+      @php
+      $articleId[] = $article->article_id;
+      @endphp
+      @if($article->article_id != $prevArticleId)
       <div class="index-main-contents">
-        <x-display :articles="$articles" :relatedTags="$relatedTags">
+        <x-display :article="$article" :relatedTags="$relatedTags">
           <form method="POST">
             @csrf
             <div class="double-buttons">
-              <span><input type="submit" formaction="" value="編集"></span>
+              <span><input type="submit" formaction="/mypage/article_edit" value="編集"></span>
               <span><input type="submit" formaction="" value="削除"></span>
+              <input type="hidden" value="{{ $article->article_id }}" name="article_id">
             </div>
           </form>
         </x-display>
       </div>
+      @php
+      $prevArticleId = $article->article_id;
+      @endphp
+      @endif
+      @endforeach
       <div class="medium changing-page">
         1/3 >
       </div>
@@ -30,6 +38,7 @@
         投稿記事
       </div>
       <div>
+        {{ $numberOfArticle = count((array_unique($articleId))) }}
         {{ $numberOfArticle }}
         <div>
           いいねされた数

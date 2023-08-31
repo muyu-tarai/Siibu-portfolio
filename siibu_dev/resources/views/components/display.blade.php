@@ -1,9 +1,4 @@
 <div class="some-articles">
-  @php
-  $prevArticleId = '';
-  @endphp
-  @foreach($articles as $article)
-  @if($article->article_id != $prevArticleId)
   <article>
     <div class="article-item">
       <div class="small">
@@ -31,10 +26,5 @@
       {!! nl2br(htmlspecialchars($article->text)) !!}
     </div>
     @endif
-    @endif
-    @php
-    $prevArticleId = $article->article_id;
-    @endphp
   </article>
-  @endforeach
 </div>

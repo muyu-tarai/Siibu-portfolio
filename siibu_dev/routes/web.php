@@ -6,6 +6,7 @@ use App\Http\Controllers\TmpController;
 use App\Http\Controllers\ArticleListController;
 use App\Http\Controllers\ArticleSubmissionController;
 use App\Http\Controllers\MypageController;
+use App\Http\Controllers\ArticleEditController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -48,9 +49,9 @@ Route::get('/mypage/favorite_list', [TmpController::class, 'favoriteArticle'])->
 Route::get('/article_submission', [ArticleSubmissionController::class, 'articleSubmission'])->name('article.submission');
 Route::post('/article_submission/check', [ArticleSubmissionController::class, 'articleSubmissionCheck'])->name('article.submission.check');
 Route::post('/article_submission/complete', [ArticleSubmissionController::class, 'articleSubmissionComplete'])->name('article.submission.complete');
-Route::get('/mypage/article_edit', [TmpController::class, 'articleEdit'])->name('article.edit');
-Route::get('/mypage/article_edit/check', [TmpController::class, 'articleEditCheck'])->name('article.edit.check');
-Route::get('/mypage/article_edit/complete', [TmpController::class, 'articleEditComplete'])->name('article.edit.complete');
+Route::post('/mypage/article_edit', [ArticleEditController::class, 'articleEdit'])->name('article.edit');
+Route::post('/mypage/article_edit/check', [ArticleEditController::class, 'articleEditCheck'])->name('article.edit.check');
+Route::post('/mypage/article_edit/complete', [ArticleEditController::class, 'articleEditComplete'])->name('article.edit.complete');
 Route::get('/mypage/delete_member', [TmpController::class, 'deleteMember'])->name('delete.member');
 Route::get('/mypage/delete_member/check', [TmpController::class, 'deleteMemberCheck'])->name('delete.member.check');
 Route::get('/mypage/delete_member/complete', [TmpController::class, 'deleteMemberComplete'])->name('delete.member.complete');
