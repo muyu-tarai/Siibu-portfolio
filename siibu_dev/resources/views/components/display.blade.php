@@ -25,6 +25,7 @@
       <i class="fa-solid fa-heart" style="color: #ff5757;"></i>
       {{ $article->number_of_likes }}
     </div>
+    {{ $slot }}
     @if(isset($article->text))
     <div class="text-area medium">
       {!! nl2br(htmlspecialchars($article->text)) !!}

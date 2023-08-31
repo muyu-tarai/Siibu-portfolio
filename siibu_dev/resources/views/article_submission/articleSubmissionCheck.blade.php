@@ -5,7 +5,7 @@
         記事タイトル
       </div>
       <form action="/article_submission/complete" method="post">
-        {{ csrf_field() }}
+        @csrf
         <div>
           {{ $title }}
         </div>
