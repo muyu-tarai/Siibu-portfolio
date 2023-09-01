@@ -18,9 +18,19 @@ class TmpController extends Controller
         return view('mypage/favoriteArticle');
     }
 
+    public function articleEdit()
+    {
+        return view('mypage/articleEdit');
+    }
+
     public function articleSubmissionCheck()
     {
         return view('article_submission/articleSubmissionCheck');
+    }
+
+    public function articleEditCheck()
+    {
+        return view('mypage/articleEditCheck');
     }
 
     public function articleDelete()
@@ -31,6 +41,11 @@ class TmpController extends Controller
     public function articleDeleteComplete()
     {
         return view('mypage/articleDeleteComplete');
+    }
+
+    public function articleEditComplete()
+    {
+        return view('mypage/articleEditComplete');
     }
 
     public function articleSubmissionComplete()
