@@ -10,10 +10,10 @@
     <div class="some-articles">
       <div class="index-main-contents">
         <x-display :articles="$articles" :relatedTags="$relatedTags">
-          <form method="POST">
+          <form method="GET">
             @csrf
             <div class="double-buttons">
-              <span><input type="submit" formaction="" value="編集"></span>
+              <span><input type="submit" formaction="/mypage/article_edit/{{ $article }}" value="編集"></span>
               <span><input type="submit" formaction="" value="削除"></span>
             </div>
           </form>

@@ -1,6 +1,6 @@
 <x-layout>
   <div class="max-width">
-    <form action="/mypage/article_edit/check" method="GET"> <!-- 確認用！本当はPOSTだよ！ -->
+    <form action="/mypage/article_edit/check" method="POST">
       <input type="text" placeholder="記事タイトル" class="input-box" value="取得してきたタイトル">
       <div class="tag-select-area">
         <div class="small">記事に付けるタグを選択できます</div>
