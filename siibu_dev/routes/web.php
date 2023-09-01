@@ -46,6 +46,7 @@ Route::get('/article_list/tag_search/{tagId}', [ArticleListController::class, 't
 Route::get('/mypage', [MypageController::class, 'mypage'])->name('mypage');
 Route::get('/mypage/favorite_list', [TmpController::class, 'favoriteArticle'])->name('favorite.article');
 Route::get('/article_submission', [ArticleSubmissionController::class, 'articleSubmission'])->name('article.submission');
+Route::post('/article_submission', [ArticleSubmissionController::class, 'returnArticleSubmission'])->name('article.submission');
 Route::post('/article_submission/check', [ArticleSubmissionController::class, 'articleSubmissionCheck'])->name('article.submission.check');
 Route::post('/article_submission/complete', [ArticleSubmissionController::class, 'articleSubmissionComplete'])->name('article.submission.complete');
 Route::get('/mypage/article_edit', [TmpController::class, 'articleEdit'])->name('article.edit');

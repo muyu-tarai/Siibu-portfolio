@@ -24,7 +24,7 @@
         本文
       </div>
       <div>
-        {{ $text }}
+        {!! nl2br(htmlspecialchars($text)) !!}
       </div>
     </div>
     <div>
@@ -32,9 +32,9 @@
       <input type="hidden" value="{{ $text }}" name="text">
     </div>
     <div>
-      <input type="submit" value="投稿する">
-      <button><a href="/article_submission">投稿画面へ</a></button>
+      <input type="submit" formaction="/article_submission/complete" value="投稿する">
+      <input type="submit" formaction="/article_submission" value="投稿画面へ戻る">
     </div>
-      </form>
+    </form>
   </div>
 </x-layout>

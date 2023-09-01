@@ -16,6 +16,17 @@ class ArticleSubmissionController extends Controller
         return view('article_submission/articleSubmission', ['tags' => $tags]);
     }
 
+    public function returnArticleSubmission(Request $request)
+    {
+        $tags = DB::table('tags')
+            ->get();
+
+        $title = $request->title;
+        $text = $request->text;
+        $checkedTags = $request->tags;
+        return view('article_submission/articleSubmission', ['tags'=>$tags,'title'=>$title,'text'=>$text,'checkedTags'=>$checkedTags]);
+    }
+
     public function articleSubmissionCheck(Request $request)
     {
         foreach ($request->input('tags') as $tag) {
