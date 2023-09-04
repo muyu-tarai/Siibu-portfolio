@@ -8,7 +8,7 @@ class ArticleDeleteController extends Controller
 {
     public function articleDelete()
     {
-        return view('mypage/articleDelete');
+        return view('mypage/article_delete/articleDelete');
     }
 
     public function articleDeleteComplete()

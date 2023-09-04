@@ -56,8 +56,8 @@ Route::get('/mypage/article_edit/{articleId}', [ArticleEditController::class, 'a
 Route::post('/mypage/article_edit/{articleId}', [ArticleEditController::class, 'returnArticleEdit'])->name('article.edit');
 Route::post('/mypage/article_edit/{articleId}/check', [ArticleEditController::class, 'articleEditCheck'])->name('article.edit.check');
 Route::post('/mypage/article_edit/{articleId}/complete', [ArticleEditController::class, 'articleEditComplete'])->name('article.edit.complete');
-Route::get('/mypage/article_delete', [ArticleDeleteController::class, 'articleDelete'])->name('article.delete');
-Route::get('/mypage/article_delete/complete', [ArticleDeleteController::class, 'articleDeleteComplete'])->name('article.delete.complete');
+Route::get('/mypage/article_delete/{articleId}', [ArticleDeleteController::class, 'articleDelete'])->name('article.delete');
+Route::get('/mypage/article_delete/{articleId}/complete', [ArticleDeleteController::class, 'articleDeleteComplete'])->name('article.delete.complete');
 Route::get('/mypage/delete_member', [TmpController::class, 'deleteMember'])->name('delete.member');
 Route::get('/mypage/delete_member/check', [TmpController::class, 'deleteMemberCheck'])->name('delete.member.check');
 Route::get('/mypage/delete_member/complete', [TmpController::class, 'deleteMemberComplete'])->name('delete.member.complete');

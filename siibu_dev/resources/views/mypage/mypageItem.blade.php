@@ -5,9 +5,9 @@
       @csrf
       <div class="double-buttons">
         <span><input type="submit" formaction="/mypage/article_edit/{{ $articles[0]->article_id }}" value="編集"></span>
-        <span><input type="submit" formaction="/mypage/article_delete" value="削除"></span>
+        <span><input type="submit" formaction="/mypage/article_delete/{{ $articles[0]->article_id }}" value="削除"></span>
         <input type="hidden">
       </div>
-      </form>
+    </form>
   </div>
 </x-layout>
