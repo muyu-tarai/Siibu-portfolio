@@ -23,16 +23,6 @@ class TmpController extends Controller
         return view('article_submission/articleSubmissionCheck');
     }
 
-    public function articleDelete()
-    {
-        return view('mypage/articleDelete');
-    }
-
-    public function articleDeleteComplete()
-    {
-        return view('mypage/articleDeleteComplete');
-    }
-
     public function articleSubmissionComplete()
     {
         return view('article_submission/articleSubmissionComplete');

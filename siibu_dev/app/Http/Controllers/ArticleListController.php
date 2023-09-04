@@ -19,10 +19,13 @@ class ArticleListController extends Controller
       ->orderBy('article_created_at', 'desc')
       ->get();
 
-    foreach ($this->articles as $article) {
-      $this->relatedTags[$article->article_id][] = $article->tag_name;
-    }
-    return view('article_list/articleList', ['articles' => $this->articles, 'relatedTags' => $this->relatedTags]);
+      foreach ($this->articles as $article) {
+        $this->relatedTags[$article->article_id][] = $article->tag_name;
+      }
+
+      $clickTitleUrl = "/article_list/item/$article->article_id";
+
+    return view('article_list/articleList', ['articles' => $this->articles, 'relatedTags' => $this->relatedTags, 'clickTitleUrl' => $clickTitleUrl]);
   }
   
   public function tagSearchArticle($tagId)
@@ -92,6 +95,8 @@ class ArticleListController extends Controller
       $this->relatedTags[$article->article_id][] = $article->tag_name;
     }
 
-    return view('article_list/item', ['articles' => $this->articles, 'relatedTags' => $this->relatedTags]);
+    $clickTitleUrl = "#";
+
+    return view('article_list/item', ['articles' => $this->articles, 'relatedTags' => $this->relatedTags, 'clickTitleUrl' => $clickTitleUrl]);
   }
 }

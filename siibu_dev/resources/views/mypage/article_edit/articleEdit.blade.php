@@ -1,7 +1,8 @@
 <x-layout>
   <div class="max-width">
-    <form action="/mypage/article_edit/check" method="POST">
+    <form action="/mypage/article_edit/{{ $article_id }}/check" method="POST">
       @csrf
+      <input type="hidden" value="{{ $article_id }}" name="article_id">
       <input type="text" placeholder="記事タイトル" class="input-box" value="{{ $title }}" name="title">
       <div class="tag-select-area">
         <div class="small">記事に付けるタグを選択できます</div>
