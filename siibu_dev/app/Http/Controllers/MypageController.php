@@ -31,9 +31,7 @@ class MypageController extends Controller
             $prevArticleId = $article->article_id;
         }
 
-        $clickTitleUrl = "/mypage/item/$article->article_id";
-
-        return view('mypage/mypage',['user_name'=>$user->name,'articles' => $articles, 'relatedTags' => $relatedTags, 'sum_likes'=>$sumLikes, 'clickTitleUrl' => $clickTitleUrl]);
+        return view('mypage/mypage',['user_name'=>$user->name,'articles' => $articles, 'relatedTags' => $relatedTags, 'sum_likes'=>$sumLikes]);
     }
 
     public function mypageItem($articleId)
@@ -51,8 +49,7 @@ class MypageController extends Controller
             $relatedTags[$article->article_id][] = $article->tag_name;
         }
 
-        $clickTitleUrl = "#";
 
-        return view('mypage/mypageItem', ['articles' => $articles, 'relatedTags' => $relatedTags, 'clickTitleUrl' => $clickTitleUrl]);
+        return view('mypage/mypageItem', ['articles' => $articles, 'relatedTags' => $relatedTags]);
     }
 }

@@ -5,11 +5,12 @@
     $articleId[] = $article->article_id;
     $numberOfArticle = count((array_unique($articleId)));
     }
+    $accessSource = "mypage";
     @endphp
     <div class="mypage-title x-large">{{ $user_name }}さんのmyページ</div>
     <div class="some-articles">
       <div class="index-main-contents">
-        <x-display :articles="$articles" :relatedTags="$relatedTags" :clickTitleUrl="$clickTitleUrl" />
+        <x-display :articles="$articles" :relatedTags="$relatedTags" :accessSource="$accessSource" />
       </div>
       <div class="medium changing-page">
         1/3 >

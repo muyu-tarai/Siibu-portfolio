@@ -23,9 +23,8 @@ class ArticleListController extends Controller
         $this->relatedTags[$article->article_id][] = $article->tag_name;
       }
 
-      $clickTitleUrl = "/article_list/item/$article->article_id";
 
-    return view('article_list/articleList', ['articles' => $this->articles, 'relatedTags' => $this->relatedTags, 'clickTitleUrl' => $clickTitleUrl]);
+    return view('article_list/articleList', ['articles' => $this->articles, 'relatedTags' => $this->relatedTags]);
   }
   
   public function tagSearchArticle($tagId)
@@ -95,8 +94,7 @@ class ArticleListController extends Controller
       $this->relatedTags[$article->article_id][] = $article->tag_name;
     }
 
-    $clickTitleUrl = "#";
 
-    return view('article_list/item', ['articles' => $this->articles, 'relatedTags' => $this->relatedTags, 'clickTitleUrl' => $clickTitleUrl]);
+    return view('article_list/item', ['articles' => $this->articles, 'relatedTags' => $this->relatedTags]);
   }
 }

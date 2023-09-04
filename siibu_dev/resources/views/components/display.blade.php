@@ -14,7 +14,13 @@
       </div>
     </div>
     <div class="article-item x-large">
-      <a href="{{ $clickTitleUrl }}">{{ $article->title }}</a>
+      @if($accessSource == "mypage")
+      <a href="/mypage/item/{{ $article->article_id }}">{{ $article->title }}</a>
+      @elseif($accessSource == "list")
+      <a href="/article_list/item/{{ $article->article_id }}">{{ $article->title }}</a>
+      @else
+      {{ $article->title }}
+      @endif
     </div>
     <div class="medium">
       @foreach($relatedTags[$article->article_id] as $relatedTag)

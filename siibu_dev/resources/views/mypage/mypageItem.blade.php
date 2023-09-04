@@ -1,6 +1,9 @@
 <x-layout>
   <div class="index-main-contents article-page">
-    <x-display :articles="$articles" :relatedTags="$relatedTags" :clickTitleUrl="$clickTitleUrl" />
+    @php
+    $accessSource = "item";
+    @endphp
+    <x-display :articles="$articles" :relatedTags="$relatedTags" :accessSource="$accessSource" />
     <form method=" GET">
       @csrf
       <div class="double-buttons">

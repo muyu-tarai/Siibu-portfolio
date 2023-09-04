@@ -1,7 +1,10 @@
 <x-layout>
   <div class="index-main-contents">
     <x-searchingBox />
-    <x-display :articles="$articles" :relatedTags="$relatedTags" :clickTitleUrl=$clickTitleUrl />
+    @php
+    $accessSource = "list";
+    @endphp
+    <x-display :articles="$articles" :relatedTags="$relatedTags" :accessSource="$accessSource" />
   </div>
   <x-tagArea />
 </x-layout>
