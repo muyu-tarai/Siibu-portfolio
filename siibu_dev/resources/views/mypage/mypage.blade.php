@@ -1,6 +1,7 @@
 <x-layout>
   <div class="index-main-contents">
     @php
+    $numberOfArticle = 0;
     foreach ($articles as $article){
     $articleId[] = $article->article_id;
     $numberOfArticle = count((array_unique($articleId)));
@@ -10,7 +11,11 @@
     <div class="mypage-title x-large">{{ $user_name }}さんのmyページ</div>
     <div class="some-articles">
       <div class="index-main-contents">
+        @if($articles->isEmpty())
+        <div class="large complete-area">まだあなたの投稿はありません</div>
+        @else
         <x-display :articles="$articles" :relatedTags="$relatedTags" :accessSource="$accessSource" />
+        @endif
       </div>
       <div class="medium changing-page">
         1/3 >

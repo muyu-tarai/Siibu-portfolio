@@ -34,7 +34,7 @@
     <div>
       <input type="submit" formaction="{{ $goUrl }}" value="{{ $selectedWord }}する">
       <input type="submit" formaction="{{ $backUrl }}" value="{{ $selectedWord }}画面へ戻る">
-      <input type="hidden" value="{{ $articleId }}" name="article_id">
+      <input type="hidden" value="{{ isset($articleId) ? $articleId : '' }}" name="article_id">
     </div>
     </form>
   </div>
