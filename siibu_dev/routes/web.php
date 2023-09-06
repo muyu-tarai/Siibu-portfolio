@@ -8,6 +8,7 @@ use App\Http\Controllers\ArticleSubmissionController;
 use App\Http\Controllers\MypageController;
 use App\Http\Controllers\ArticleEditController;
 use App\Http\Controllers\ArticleDeleteController;
+use App\Http\Controllers\FavoriteController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -61,3 +62,4 @@ Route::get('/mypage/article_delete/{articleId}/complete', [ArticleDeleteControll
 Route::get('/mypage/delete_member', [TmpController::class, 'deleteMember'])->name('delete.member');
 Route::get('/mypage/delete_member/check', [TmpController::class, 'deleteMemberCheck'])->name('delete.member.check');
 Route::get('/mypage/delete_member/complete', [TmpController::class, 'deleteMemberComplete'])->name('delete.member.complete');
+Route::post('/favorite', [FavoriteController::class, 'favorite'])->name('favorite');

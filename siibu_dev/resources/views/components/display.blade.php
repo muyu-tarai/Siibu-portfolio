@@ -28,7 +28,7 @@
       @endforeach
     </div>
     <div class="medium">
-      <i class="fa-solid fa-heart" style="color: #ff5757;"></i>
+      <button class="favorite" data-article-id="{{ $article->article_id }}"><i class="fa-solid fa-heart" style="color: black;"></i></button>
       {{ $article->number_of_likes }}
     </div>
     {{ $slot }}
@@ -44,3 +44,34 @@
   </article>
   @endforeach
 </div>
+<script>
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-TOKEN': $("[name='csrf-token']").attr("content")
+    },
+  })
+
+  $('.favorite').on('click', function() {
+    var article_id = $(this).data('article-id');
+    $.ajax({
+      url: "{{ route('favorite') }}",
+      method: "POST",
+      data: {
+        article_id: article_id
+      },
+      dataType: "json",
+    }).done(function(res) {
+      if (res.res == 'added') {
+        $(".fa-heart").css({
+          'color': 'red'
+        });
+      } else if (res.res == 'deleted') {
+        $(".fa-heart").css({
+          'color': 'black'
+        });
+      }
+    }).fail(function() {
+      console.log('エラーが発生しました')
+    });
+  });
+</script>
