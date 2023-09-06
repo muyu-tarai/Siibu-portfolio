@@ -14,12 +14,12 @@
       </div>
     </div>
     <div class="article-item x-large">
-      @if($accessSource == "mypage")
+      @if(!isset($accessSource))
+      {{ $article->title }}
+      @elseif($accessSource == "mypage")
       <a href="/mypage/item/{{ $article->article_id }}">{{ $article->title }}</a>
       @elseif($accessSource == "list")
       <a href="/article_list/item/{{ $article->article_id }}">{{ $article->title }}</a>
-      @else
-      {{ $article->title }}
       @endif
     </div>
     <div class="medium">
