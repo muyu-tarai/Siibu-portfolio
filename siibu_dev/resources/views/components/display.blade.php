@@ -53,6 +53,7 @@
 
   $('.favorite').on('click', function() {
     var article_id = $(this).data('article-id');
+    var favorite = $(this);
     $.ajax({
       url: "{{ route('favorite') }}",
       method: "POST",
@@ -62,11 +63,11 @@
       dataType: "json",
     }).done(function(res) {
       if (res.res == 'added') {
-        $(".fa-heart").css({
+        favorite.children().css({
           'color': 'red'
         });
       } else if (res.res == 'deleted') {
-        $(".fa-heart").css({
+        favorite.children().css({
           'color': 'black'
         });
       }
