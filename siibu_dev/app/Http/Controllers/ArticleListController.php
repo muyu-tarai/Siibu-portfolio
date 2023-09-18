@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class ArticleListController extends Controller
 {
@@ -24,6 +25,9 @@ class ArticleListController extends Controller
       foreach ($this->articles as $article) {
         $this->relatedTags[$article->article_id][] = $article->tag_name;
       }
+
+    $user = Auth::user();
+    dd($user);
 
 
     return view('article_list/articleList', ['articles' => $this->articles, 'relatedTags' => $this->relatedTags]);

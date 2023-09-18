@@ -4,6 +4,9 @@
   @endphp
   @foreach($articles as $article)
   @if($article->article_id != $prevArticleId)
+  @php
+  $a[]=$article;
+  @endphp
   <article>
     <div class="article-item">
       <div class="small">
