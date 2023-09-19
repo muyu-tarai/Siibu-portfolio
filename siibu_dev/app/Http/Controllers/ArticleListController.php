@@ -27,7 +27,7 @@ class ArticleListController extends Controller
       }
 
     $user = Auth::user();
-    dd($user);
+    
 
 
     return view('article_list/articleList', ['articles' => $this->articles, 'relatedTags' => $this->relatedTags]);
